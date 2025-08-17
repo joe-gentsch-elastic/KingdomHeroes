@@ -7,7 +7,7 @@ class MenuState(BaseState):
     def __init__(self, game_manager):
         super().__init__(game_manager)
         self.font = pygame.font.Font(None, 74)
-        self.title_text = self.font.render("Medieval Strategy", True, (255, 215, 0))
+        self.title_text = self.font.render("Kingdom Heroes", True, (255, 215, 0))
         self.start_text = pygame.font.Font(None, 36).render("Press SPACE to Begin Your Quest", True, (255, 255, 255))
         self.subtitle_text = pygame.font.Font(None, 32).render("Conquer the Realm", True, (200, 200, 200))
         
@@ -73,15 +73,22 @@ class MenuState(BaseState):
             [(700, 500), (730, 380), (760, 500)],
             [(600, 520), (640, 420), (680, 520)]
         ]
+        #### add image of castle to menu
+        self.castle_image = pygame.image.load("/Users/joegentsch/PycharmProjects/vibe_coding_copy/teddy_project/teddy_project_2/medieval-strategy-game/game/ui/images/menubackground.jpeg").convert_alpha()
+        self.castle_image = pygame.transform.scale(self.castle_image, (self.screen_width, self.screen_height))  # Resize as needed
+        #self.castle_image = pygame.transform.scale(self.castle_image, (200, 150))  # Resize as needed
+        self.castle_pos = (self.screen_width // 1000, self.screen_height // 1000 )  # Adjust position
+        #self.castle_pos = (self.screen_width // 2 - 100, self.screen_height // 2 - 200)  # Adjust position
+
         
     def init_particles(self):
         for _ in range(50):
             self.particles.append({
-                'x': random.randint(0, 800),
-                'y': random.randint(0, 600),
+                'x': random.randint(0, 1500),
+                'y': random.randint(0, 1000),
                 'speed': random.uniform(0.5, 2.0),
                 'size': random.randint(1, 3),
-                'alpha': random.randint(100, 255)
+                'alpha': random.randint(100, 1000) #woo, 255
             })
         
     def handle_event(self, event):
@@ -127,8 +134,8 @@ class MenuState(BaseState):
             particle['alpha'] = int(150 + 50 * math.sin(self.time * 2 + particle['x'] * 0.01))
             
             if particle['y'] < 0:
-                particle['y'] = 600
-                particle['x'] = random.randint(0, 800)
+                particle['y'] = 1000
+                particle['x'] = random.randint(0, 1000)
     
     def render(self):
         # Animated gradient background
@@ -152,6 +159,9 @@ class MenuState(BaseState):
                     (peak[0] + 15, peak[1] + 20)
                 ]
                 pygame.draw.polygon(self.screen, (200, 200, 220), snow_points)
+
+        #Make castle
+        self.screen.blit(self.castle_image, self.castle_pos) ### JOE ADDED HERE
         
         # Draw castle silhouette
         for i in range(len(self.castle_points) - 1):
@@ -166,7 +176,7 @@ class MenuState(BaseState):
             self.screen.blit(alpha_surface, (particle['x'], particle['y']))
         
         # Animated title with glow effect
-        title_glow = pygame.font.Font(None, 78).render("Medieval Strategy", True, (100, 50, 0))
+        title_glow = pygame.font.Font(None, 78).render("Kingdom Heroes", True, (100, 50, 0))
         title_rect = title_glow.get_rect(center=(self.screen_width // 2, self.screen_height // 2 - 100))
         
         # Draw glow (offset in multiple directions)

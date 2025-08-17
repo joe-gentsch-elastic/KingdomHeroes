@@ -6,13 +6,13 @@ def main():
     pygame.init()
     
     # Game settings
-    SCREEN_WIDTH = 1200
-    SCREEN_HEIGHT = 800
+    SCREEN_WIDTH = 1500
+    SCREEN_HEIGHT = 1000
     FPS = 60
     
     # Create display
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.display.set_caption("Medieval Strategy Game")
+    pygame.display.set_caption("Kingdom Heroes")
     clock = pygame.time.Clock()
     
     # Initialize game manager

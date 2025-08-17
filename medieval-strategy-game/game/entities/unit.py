@@ -82,9 +82,9 @@ class Unit:
                 'cost': {'gold': 10, 'food': 5}
             },
             'knight': {
-                'max_health': 120,
+                'max_health': 130,
                 'speed':45,
-                'attack_damage': 40,
+                'attack_damage': 55,
                 'attack_range': 20,
                 'cost': {'gold': 40, 'food': 20, 'stone': 10}
             },
@@ -124,16 +124,16 @@ class Unit:
                 'cost': {'gold': 80, 'food': 30, 'wood': 34, 'stone': 25}
             },
             'battalion': {
-                'max_health': 150,  # Battalion commander health
+                'max_health': 125,  #  150 to high Battalion commander health
                 'speed': 80,
-                'attack_damage': 40,
-                'attack_range': 25,
+                'attack_damage': 45, #60 to high,
+                'attack_range': 35,
                 'cost': {'gold': 0, 'food': 0, 'wood': 0, 'stone': 0}
             },
             'dragoons': {
-                'max_health': 120,  # Dragoon commander health
+                'max_health': 80,  # Dragoon commander health
                 'speed': 180,
-                'attack_damage': 30,
+                'attack_damage': 15,
                 'attack_range': 35,
                 'cost': {'gold': 100, 'food': 40, 'wood': 0, 'stone': 0}
             },

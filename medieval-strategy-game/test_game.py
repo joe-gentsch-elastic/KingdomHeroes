@@ -69,7 +69,7 @@ def test_basic_functionality():
         return False
 
 if __name__ == "__main__":
-    print("Testing Medieval Strategy Game...")
+    print("Testing Kingdom Heroes...")
     print("=" * 40)
     
     if test_imports():

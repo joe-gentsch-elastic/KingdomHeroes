@@ -7,7 +7,7 @@ class Castle:
         self.y = y
         self.owner = owner
         self.level = 1
-        self.max_level = 5
+        self.max_level = 20 #I think this is the castle level
         self.health = 5500
         self.max_health = 5500
         self.size = 128  # Larger size for castle images

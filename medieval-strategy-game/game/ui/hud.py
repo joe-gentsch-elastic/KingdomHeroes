@@ -98,7 +98,7 @@ class HUD:
             'musket': {'gold': 60, 'food': 25, 'wood': 15, 'stone': 10},
             'cannon': {'gold': 100, 'food': 0, 'wood': 40, 'stone': 50},
             'battalion': {'gold': 60, 'food': 35, 'wood': 25, 'stone': 5},
-            'dragoons': {'gold': 100, 'food': 40, 'wood': 0, 'stone': 0},
+            'dragoons': {'gold': 150, 'food': 40, 'wood': 60, 'stone': 10},
             'commander': {'gold': 80, 'food': 20, 'wood': 5, 'stone': 5},
             'giant': {'gold': 200, 'food': 80, 'wood': 0, 'stone': 30}
         }
